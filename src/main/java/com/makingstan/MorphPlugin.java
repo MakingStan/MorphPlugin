@@ -118,7 +118,6 @@ public class MorphPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged changed)
 	{
-		System.out.println(changed.getNewValue());
 		if (changed.getKey().equals("showAnimId") && changed.getGroup().equals("objectoverride") && changed.getNewValue().equals("false"))
 		{
 			client.getLocalPlayer().setOverheadText("");
@@ -158,7 +157,6 @@ public class MorphPlugin extends Plugin
 
 				if (skillGuideWidget == null) return;
 				if( skillGuideCategories == null) return;
-				System.out.println(Arrays.toString(skillGuideWidget.getStaticChildren()));
 				for (Widget child : skillGuideWidget.getStaticChildren()) {
 					if (child == null) break;
 					traverseWidgetRecursive(child);
@@ -242,7 +240,6 @@ public class MorphPlugin extends Plugin
 		if (children == null) return;
 		for (Widget child : children) {
 			if (child == null) continue;
-			System.out.println(child.getText());
 
 			traverseWidgetRecursive(child);
 		}
